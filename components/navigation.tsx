@@ -22,6 +22,9 @@ export default function Navigation() {
                 <li className="mx-4 my-3 md:my-0">
                     <Link className="text-xl hover:text-green-800" href="/collaborate">collaborate</Link>
                 </li>
+                <li className="mx-4 my-3 md:my-0">
+                    <Link className="text-xl hover:text-green-800" href="/lifestyle">lifestyle</Link>
+                </li>
             </ul>
         </nav>
   )

@@ -20,6 +20,7 @@ const Intro = () => {
         </a>{' '}
         and {CMS_NAME}.
       </h4>
+      {/* TODO This about link will go away when I solve navigation */}
       <Link href="/about">about</Link>
     </section>
   )
