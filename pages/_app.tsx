@@ -1,19 +1,21 @@
 import { AppProps } from 'next/app'
 import '../styles/index.css'
+import { Cormorant }  from '@next/font/google'
+import { Open_Sans } from '@next/font/google'
 
-import { Inter } from '@next/font/google'
-
-const inter = Inter({
+const open_sans = Open_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
-})
+  weight: ['400', '700'],
+});
+
+const comorant = Cormorant({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={`{$inter.variable} font-sans`}>
-      <p className={`{$inter.variable} font-sans`}>
-        This is a test of the Inter font.
-      </p>
+    <main className={comorant.className}>
       <Component {...pageProps} />
     </main>
   )

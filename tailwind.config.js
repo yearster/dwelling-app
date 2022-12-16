@@ -3,6 +3,8 @@ const {fontFamily} = require('tailwindcss/defaultTheme')
 
 
 module.exports = {
+  // TODO: ADD PURGE TO THIS CONFIG
+  // JIT: https://tailwindcss.com/docs/just-in-time-mode ?
   content: ['./components/**/*.tsx', './pages/**/*.tsx'],
   theme: {
     extend: {
