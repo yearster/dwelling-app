@@ -24,6 +24,7 @@ export default function Index({ allPosts }: Props) {
         </Head>
         <Container>
           {/* <Navigation/> */}
+          <Navigation />
           <Intro />
           {heroPost && (
             <HeroPost
