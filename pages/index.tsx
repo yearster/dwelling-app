@@ -23,7 +23,6 @@ export default function Index({ allPosts }: Props) {
           <title>DwellingOnTheRidge</title>
         </Head>
         <Container>
-          {/* <Navigation/> */}
           <Navigation />
           <Intro />
           {heroPost && (
