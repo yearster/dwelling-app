@@ -1,69 +1,63 @@
 import Menu  from 'components/svgs/menu.svg'
 import Close from 'components/svgs/close.svg'
+import OutsideLinks from './outsideLinks'
 import { useState, useRef } from 'react'
 
 import Link from 'next/link'
 
 export default function Navigation() {
-    const myRef = useRef(null);
-    const [column, setColumn] = useState(false);
-    const [row, setRow] = useState(true);
-    function menu(e){
-        if (column === true) {
-            setColumn(false)
-            setRow(true)
-            console.log(myRef.current.classList)
-            myRef.current.classList.add('hidden')
+  // Initialize state to track whether the menu is open or closed
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        } else {
-            setColumn(true)
-            setRow(false)
-            myRef.current.classList.remove('hidden')
-        }
-        console.log(e);
+  // Create a reference for the menu element
+  const menuElement = useRef(null);
 
-        // console.log(e)
-        // let list = document.querySelector('ul');
-        // // console.log(list)
-        // e.name === 'Menu' ? e.name = "close" : e.name = "menu"
-    }
+  // Toggle the menu's open/closed state
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+    menuElement.current.classList.toggle('hidden');
+  }
+
+  function goTo(s) {
+    console.log(s)
+    //TODO go to the website in the string when clicked. 
+  }
+
   return (
-       <nav className="w-full p-5 pb-10 resize md:flex md:items-center md:justify-between">
-            <div className="flex items-center justify-between">
-                <span>
-                    Hello
-                </span>
-                <span className="block text-3xl cursor-pointer md:hidden">
-                    { column && <Close onClick={menu}/>}
-                    { row && <Menu onClick={menu}/>}
-                    {/* <Menu className="" onClick={menu}/>
-                    <Close className="hidden" onClick={menu}/> */}
-                </span>
-                
-            </div>
-            {/* md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:opacity-100 opacity-0 top-[-1000px] transition-all ease-in duration-500 */}
-            <ul ref={myRef} className="hidden transition-all duration-500 ease-in md:items-center md:flex">
-                <li className="mx-4 my-3 md:my-0">
-                    <Link className="text-xl hover:text-green-800" href="/about">about</Link>
-                </li>
-                <li className="mx-4 my-3 md:my-0">
-                    <Link className="text-xl hover:text-green-800" href="/liketoknowit">liketoknow.it</Link>
-                </li>
-                <li className="mx-4 my-3 md:my-0">
-                    <Link className="text-xl hover:text-green-800" href="/shop">shop our home</Link>
-                </li>
-                <li className="mx-4 my-3 md:my-0">
-                    <Link className="text-xl hover:text-green-800" href="/garden">garden</Link>
-                </li>
-                <li className="mx-4 my-3 md:my-0">
-                    <Link className="text-xl hover:text-green-800" href="/collaborate">collaborate</Link>
-                </li>
-                 <li className="mx-4 my-3 md:my-0">
-                     <Link className="text-xl hover:text-green-800" href="/lifestyle">lifestyle</Link>
-                 </li>
-             </ul>
-         </nav>
-   )
-     
- }
- 
+    <nav className={`space-between w-full pb-10 resize md:flex mt-3`}>
+      {/* Menu toggle button */}
+      <div className="flex justify-between mb-10 md:hidden">
+        <span className="text-3xl cursor-pointer ">
+          {isMenuOpen ? <Close onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />}
+        </span>
+        <OutsideLinks />
+      </div>
+
+      {/* Menu content */}
+      <div ref={menuElement} className="hidden w-full md:flex">
+        <ul className="w-full transition-all duration-500 ease-in md:flex">
+          {/* Menu items */}
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/about">about</Link>
+          </li>
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/liketoknowit">liketoknow.it</Link>
+          </li>
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/shop">shop our home</Link>
+          </li>
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/garden">garden</Link>
+          </li>
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/collaborate">collaborate</Link>
+          </li>
+          <li className="my-3 mr-6 md:my-0">
+            <Link className="text-xl hover:text-green-800" href="/lifestyle">lifestyle</Link>
+          </li>
+        </ul>
+        {!isMenuOpen && <OutsideLinks />}
+      </div>
+    </nav>
+  )
+}
