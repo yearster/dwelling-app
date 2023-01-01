@@ -1,6 +1,6 @@
 import Insta from 'components/svgs/insta.svg'
 import FB from 'components/svgs/fb.svg'
-import Tictok from 'components/svgs/tictok.svg'
+import TikTok from 'components/svgs/tiktok.svg'
 import styles from "../module.css/navigation.module.css"
 
 export default function OutsideLinks() {
@@ -18,7 +18,7 @@ export default function OutsideLinks() {
   return (
     <div className="flex justify-end w-1/6 cursor-pointer">
       <FB className="w-1/3 h-10" onClick={() => goTo("facebook")} />
-      <Tictok className="w-1/3 h-10" onClick={() => goTo("tiktok")} />
+      <TikTok className="w-1/3 h-10" onClick={() => goTo("tiktok")} />
       <Insta className="w-1/3 h-10" onClick={() => goTo("instagram")} />
     </div>
   )
