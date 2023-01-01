@@ -1,11 +1,13 @@
 import Menu  from 'components/svgs/menu.svg'
 import Close from 'components/svgs/close.svg'
 import OutsideLinks from './outsideLinks'
+import styles from "./navigation.module.css"
 import { useState, useRef } from 'react'
+
 
 import Link from 'next/link'
 
-export default function Navigation() {
+export default function Navigation({currentPage}) {
   // Initialize state to track whether the menu is open or closed
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,13 +20,8 @@ export default function Navigation() {
     menuElement.current.classList.toggle('hidden');
   }
 
-  function goTo(s) {
-    console.log(s)
-    //TODO go to the website in the string when clicked. 
-  }
-
   return (
-    <nav className={`space-between w-full pb-10 resize md:flex mt-3`}>
+    <nav className={`space-between w-full pb-5 p-5 resize md:flex hover:text] ${styles.nn}`}>
       {/* Menu toggle button */}
       <div className="flex justify-between mb-10 md:hidden">
         <span className="text-3xl cursor-pointer ">
@@ -37,24 +34,41 @@ export default function Navigation() {
       <div ref={menuElement} className="hidden w-full md:flex">
         <ul className="w-full transition-all duration-500 ease-in md:flex">
           {/* Menu items */}
+          {currentPage.toLowerCase() !== "home" && (
+            <li className="my-3 mr-6 md:my-0">
+              <Link className={`text-xl ${styles.hoverText}`} href="/">Home</Link>
+            </li>
+          )}
+          {currentPage.toLowerCase() !== "about" && (
           <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/about">about</Link>
+            <Link className={`text-xl ${styles.hoverText}`} href="/about">About</Link>
           </li>
+          )}
+  
           <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/liketoknowit">liketoknow.it</Link>
+          <Link className={`text-xl ${styles.hoverText}`} href="https://www.shopltk.com/explore/dwellingontheridge" target="_blank">LikeToKnow.it</Link>
           </li>
+
+          {currentPage.toLowerCase() !== "shop our home" && (
+            <li className="my-3 mr-6 md:my-0">
+              <Link className={`text-xl ${styles.hoverText}`} href="/shopourhome">Shop Our Home</Link>
+            </li>
+          )}
+          {currentPage.toLowerCase() !== "garden" && (
           <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/shop">shop our home</Link>
+            <Link className={`text-xl ${styles.hoverText}`} href="/garden">Garden</Link>
           </li>
+          )}
+          {currentPage.toLowerCase() !== "collaborate" && (
           <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/garden">garden</Link>
+            <Link className={`text-xl ${styles.hoverText}`} href="/collaborate">Collaborate</Link>
           </li>
+          )}
+          {currentPage.toLowerCase() !== "lifestyle" && (
           <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/collaborate">collaborate</Link>
+            <Link className={`text-xl ${styles.hoverText}`} href="/lifestyle">Lifestyle</Link>
           </li>
-          <li className="my-3 mr-6 md:my-0">
-            <Link className="text-xl hover:text-green-800" href="/lifestyle">lifestyle</Link>
-          </li>
+          )}
         </ul>
         {!isMenuOpen && <OutsideLinks />}
       </div>

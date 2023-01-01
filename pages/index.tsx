@@ -12,6 +12,7 @@ import Navigation from '../components/navigation'
 type Props = {
   allPosts: Post[]
 }
+const CURRENT_PAGE = "Home"
 
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0]
@@ -22,9 +23,9 @@ export default function Index({ allPosts }: Props) {
         <Head>
           <title>DwellingOnTheRidge</title>
         </Head>
+        <Navigation currentPage={CURRENT_PAGE}/>
         <Container>
-          <Navigation />
-          <Intro />
+          <Intro currentPage={CURRENT_PAGE}/>
           {heroPost && (
             <HeroPost
               title={heroPost.title}

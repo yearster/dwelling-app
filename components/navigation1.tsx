@@ -2,6 +2,7 @@ import Menu  from 'components/svgs/menu.svg'
 import Close from 'components/svgs/close.svg'
 import OutsideLinks from './outsideLinks'
 import { useState, useRef } from 'react'
+import styles from "./navigation.module.css"
 
 import Link from 'next/link'
 
@@ -26,7 +27,7 @@ export default function Navigation() {
         //TODO go to the website in the string when clicked. 
     }
   return (
-       <nav className={`space-between w-full pb-10 resize md:flex mt-3`}>
+       <nav className={`space-between w-full pb-10 resize md:flex mt-3 {styles.nn} right`}>
             <div className="flex justify-between mb-10 md:hidden">
                 <span className="text-3xl cursor-pointer ">
                     { column && <Close onClick={menu}/>}

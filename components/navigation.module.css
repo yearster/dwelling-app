@@ -1,0 +1,9 @@
+.nn {
+    background-color: #e7dfd9;
+}
+
+.hoverText:hover {
+    --tw-text-opacity: 1;
+    /* WHAT COLOR?? */
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
