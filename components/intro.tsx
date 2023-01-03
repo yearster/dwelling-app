@@ -1,13 +1,16 @@
 import { CMS_NAME } from '../lib/constants'
 import Link from 'next/link'
+import Logo from './svgs/logo.svg'
+
 
 const Intro = ({currentPage}) => {
   return (
-    <section className ="flex flex-col items-center mt-10 mb-10 md:flex-row md:justify-between md:mb-10">
-      <h1 className="text-5xl font-bold leading-tight tracking-tighter md:text-8xl md:pr-8">
+    <section className ="flex items-center justify-between mt-10 mb-10 md:flex-row md:mb-10">
+      <h1 className="text-5xl font-bold leading-tight tracking-tighter md:text-9xl md:pr-8">
         {currentPage}
       </h1>
-      <h4 className="mt-5 text-lg text-center md:text-left md:pl-8">
+      <Logo className="w-1/3 h-1/3"></Logo>
+      {/* <h4 className="mt-5 text-lg text-center md:text-left md:pl-8">
         A statically generated blog example using{' '}
         <a
           href="https://nextjs.org/"
@@ -16,7 +19,7 @@ const Intro = ({currentPage}) => {
           Next.js
         </a>{' '}
         and {CMS_NAME}.
-      </h4>
+      </h4> */}
     </section>
   )
 }
