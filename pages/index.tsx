@@ -8,7 +8,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
 import Navigation from '../components/navigation'
-import AboutIndex from '../components/about_index'
+import AboutIndex from '../components/about-index'
 
 type Props = {
   allPosts: Post[]
@@ -38,8 +38,9 @@ export default function Index({ allPosts }: Props) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <AboutIndex/>
+          
         </Container>
+        <AboutIndex/>
       </Layout>
     </>
   )

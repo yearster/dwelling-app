@@ -1,12 +1,13 @@
 import { CMS_NAME } from '../lib/constants'
 import Link from 'next/link'
 import Logo from './svgs/logo.svg'
+import styles from './intro.module.css'
 
 
 const Intro = ({currentPage}) => {
   return (
     <section className ="flex items-center justify-between mt-10 mb-10 md:flex-row md:mb-10">
-      <h1 className="text-5xl font-bold leading-tight tracking-tighter md:text-9xl md:pr-8">
+      <h1 className="text-5xl font-bold leading-tight tracking-tighter md:text-8xl md:pr-8">
         {currentPage}
       </h1>
       <Logo className="w-1/3 h-1/3"></Logo>

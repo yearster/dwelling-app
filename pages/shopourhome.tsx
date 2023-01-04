@@ -16,22 +16,22 @@ export default function ShopOurHome() {
             <title>DwellingOnTheRidge</title>
           </Head>
           <Navigation currentPage={CURRENT_PAGE}/>
-          <Container>
-          <Intro currentPage={CURRENT_PAGE}/>
-          <section className="">
-            {/* <Intro /> */}
-            
-            <div className="flex-wrap justify-between md:flex">
-              <div className='md:w-3/5'>
-                <Image src={bgImg} alt="image"/>
-              </div>
-              <div className='flex-col px-5 md:w-2/5'>
-                Shope Our Home Page
-              </div>
-            </div>
-            {/* <h1 className="text-6xl font-bold md:text-4xl">RIGHT HERE ABOUT</h1> */}
-        </section>
-          </Container>
+            <Container>
+              <Intro currentPage={CURRENT_PAGE}/>
+              <section className="">
+                {/* <Intro /> */}
+                
+                <div className="flex-wrap justify-between md:flex">
+                  <div className='md:w-3/5'>
+                    <Image src={bgImg} alt="image"/>
+                  </div>
+                  <div className='flex-col px-5 md:w-2/5'>
+                    Shope Our Home Page
+                  </div>
+                </div>
+                {/* <h1 className="text-6xl font-bold md:text-4xl">RIGHT HERE ABOUT</h1> */}
+              </section>
+            </Container>
         </Layout>
       </>
        

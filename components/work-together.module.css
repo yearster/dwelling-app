@@ -1,0 +1,20 @@
+.bg {
+    background-color: #C8C4BF
+}
+
+.bottom {
+    border-color: black;
+}
+
+.buttonboarder {
+    --tw-border-opacity: 1;
+    border-color: #A7876F;
+    color: white;
+    background-color: #A7876F;
+}
+
+.buttonboarder:hover {
+    color: #A7876F;
+    background-color: white;
+
+}
