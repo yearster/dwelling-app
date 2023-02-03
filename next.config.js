@@ -6,5 +6,6 @@ module.exports = {
             use: [{loader: '@svgr/webpack', options: {icon: true}}],
         })
         return config
-    }
+    },
+    output: 'standalone'
 }

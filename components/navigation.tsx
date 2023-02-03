@@ -1,5 +1,5 @@
-import Menu  from 'components/svgs/menu.svg'
-import Close from 'components/svgs/close.svg'
+import Menu  from './svgs/menu.svg'
+import Close from './svgs/close.svg'
 import OutsideLinks from './outsideLinks'
 import styles from "./navigation.module.css"
 import { useState, useRef } from 'react'
